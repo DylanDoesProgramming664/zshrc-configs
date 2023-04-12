@@ -45,4 +45,4 @@ alias fr="fossil rm"
 
 
 ### Sources
-source /home/dylandoesprogramming/.cache/appimage-run/79599a543dd6f99130dc792e6562ac77d5d884048fe7e771cd55bae1f3a1ab09
+source /home/dylandoesprogramming/.cargo/env
