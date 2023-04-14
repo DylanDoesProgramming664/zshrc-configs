@@ -1,15 +1,31 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-setopt autocd beep extendedglob notify
-bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/dylandoesprogramming/.zshrc'
+# AUTOCOMPLETION
 
-autoload -Uz compinit
+# initialize autocompletion
+autoload -U compinit
 compinit
+
+# history setup
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+HISTFILE=/home/dylandoesprogramming/.zsh/.zhistory
+SAVEHIST=10000
+HISTSIZE=10000
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt EXTENDED_HISTORY
+
+# autocompletion using arrow keys (based on history)
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
+
+# GENERAL
+
+# AutoCD
+setopt auto_cd
+
+# (bonus: Disable sound errors in Zsh)
+setopt nobeep
+
+### Prompt
 # End of lines added by compinstall
 if [[ "$USER" == 'root' ]]; then
     PROMPT='%B%F{red}[%n@%m:%~]# %f%b'
